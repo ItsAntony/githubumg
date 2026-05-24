@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="css/auth.css?v=1">
+</head>
+<body>
+    <div class="container">
+        <h1>Registrarse</h1>
+        <p>Llena los datos para crear tu cuenta.</p>
+        <form onsubmit="event.preventDefault();">
+            <input type="text" placeholder="Nombre completo" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <input type="password" placeholder="Contraseña" required>
+            <button type="submit">Crear cuenta</button>
+        </form>
+        <div class="footnote">
+            <p>¿Ya tienes cuenta? <a href="signin.html">Iniciar sesión</a></p>
+            <p><a href="index.html">Volver a la página principal</a></p>
+        </div>
+    </div>
+</body>
+</html>

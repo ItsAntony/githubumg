@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página</title>
+    <link rel="stylesheet" href="css/styles.css?v=1">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">R</div>
+            <h1>Mi Página</h1>
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#galeria">Galería</a>
+            <a href="#sobre-mi">Sobre mí</a>
+            <a href="#contacto">Contacto</a>
+            <a class="nav-button" href="signin.html">Iniciar sesión</a>
+            <a class="nav-button" href="signup.html">Registrarse</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="section">
+            <h2>Bienvenido</h2>
+            <p>hola esta es mi pagina web xd.</p>
+        </section>
+
+        <section id="galeria" class="section">
+            <h2>Galería</h2>
+            <div class="carousel" id="carousel">
+                <img id="galleryImage" src="img/excu.jpg" alt="Foto 1" />
+            </div>
+            <div class="controls">
+                <button type="button" id="prevBtn">Anterior</button>
+                <button type="button" id="nextBtn">Siguiente</button>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="section">
+            <h2>Sobre mí</h2>
+            <div class="cards">
+                <article class="card">
+                    <h3>Me gusta Jugar</h3>
+                    <p>La mayoria de veces me encuentro ya sea jugando o en mi computadora experimentando siempre.</p>
+                </article>
+                <article class="card">
+                    <h3>Me gusta la música</h3>
+                    <p>Todo el tiempo necesito escuchar musica para todo, es como algo sumamente importante para mi.</p>
+                </article>
+                <article class="card">
+                    <h3>Me gusta estar con amigos</h3>
+                    <p>la mayoria de veces me cuentro bastante rodeado de amigos y es algo que me encanta por que son lo mejor que tengo.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <h2>Contacto</h2>
+            <p>Instagram: <a href="https://www.instagram.com/antony._.cg/" target="_blank" rel="noopener noreferrer">@Antony._.cg</a></p>
+            <p>WhatsApp: <a href="https://wa.me/50258883933" target="_blank" rel="noopener noreferrer">+502 5888 3933</a></p>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Pagina de Romeito. Todos los derechos resevados. a mi persona el que copie mi pagina no pasa el semestre.
+    </footer>
+
+    <script>
+        const galleryImage = document.getElementById('galleryImage');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        const imagenes = [
+            'img/excu.jpg',
+            'img/lcm.jpg',
+            'img/yo2.jpg',
+            'img/yo5.jpg',
+            'img/yoxd.jpg'
+        ];
+
+        let current = 0;
+
+        function mostrarImagen(indice) {
+            if (!imagenes.length) return;
+            current = (indice + imagenes.length) % imagenes.length;
+            galleryImage.src = imagenes[current];
+            galleryImage.alt = 'Foto ' + (current + 1);
+        }
+
+        prevBtn.addEventListener('click', () => {
+            mostrarImagen(current - 1);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            mostrarImagen(current + 1);
+        });
+
+        mostrarImagen(current);
+    </script>
+</body>
+</html>
